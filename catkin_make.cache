@@ -1,0 +1,2 @@
+3wheel_robot_search:robot_dd_model_pkg
+-DCATKIN_DEVEL_PREFIX=/home/abuki/3wheel-robot/devel -DCMAKE_INSTALL_PREFIX=/home/abuki/3wheel-robot/install -G Unix Makefiles
