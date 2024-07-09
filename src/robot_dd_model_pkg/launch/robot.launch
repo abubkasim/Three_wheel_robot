@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="model" default="$(find robot_dd_model_pkg)/urdf/robot.urdf"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+  <node name="spawn_urdf" pkg="robot_dd_model_pkg" type="spawn_model" args="-param robot_description -urdf -model robot_dd_model_pkg" output="screen"/>
+  
+  <include file="$(find robot_dd_model_pkg)/launch/robot.launch">
+    <arg name="world_name" value="$(find robot_dd_model_pkg)/worlds/ethiopia.world"/>
+  </include>
+  
+</launch>
+
